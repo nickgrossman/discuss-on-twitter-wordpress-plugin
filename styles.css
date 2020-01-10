@@ -1,0 +1,18 @@
+.discuss-on-twitter-button {
+	display: inline-block;
+	background: #1da0f1;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 100px;
+    font-size: 1.1em;
+    margin: 10px 0 20px;
+}
+.discuss-on-twitter-button:hover {
+	background: #fff;
+	color: #1da0f1;
+}
+.discuss-on-twitter-button .dashicons-twitter {
+	line-height: 1.5em;
+    margin-right: 10px;
+    font-size: 1.1em;
+}
