@@ -40,13 +40,13 @@ function discuss_on_twitter_button() {
       <span class="dashicons dashicons-twitter"></span>
       Discuss on Twitter
     </a>
-    <a class="discuss-on-twitter-button view-reactions" href="https://twitter.com/search?q=<?php echo urlencode($permalink); ?>" target="_twitter-<?php echo $id; ?>">
+    <a class="discuss-on-twitter-button view-reactions" href="https://twitter.com/search?q=<?php echo urlencode($permalink); ?>&f=live" target="_twitter-<?php echo $id; ?>">
       View Discussion
     </a>
   <?php endif; ?>
 
   <?php else: ?>
-    <a class="discuss-on-twitter-button view-and-reply" href="https://twitter.com/search?q=<?php echo urlencode($permalink); ?>" target="_twitter-<?php echo $id; ?>">
+    <a class="discuss-on-twitter-button view-and-reply" href="https://twitter.com/search?q=<?php echo urlencode($permalink); ?>&f=live" target="_twitter-<?php echo $id; ?>">
       View Discussions on Twitter
     </a>
   <?php endif; ?>
