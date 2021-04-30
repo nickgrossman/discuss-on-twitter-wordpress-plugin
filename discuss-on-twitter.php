@@ -3,7 +3,7 @@
  * Plugin Name: Discuss on Twitter
  * Description: Use Twitter as the commenting system for your blog
  * Author: Nick Grossman
- * Author URI: https://nickgrossman.is
+ * Author URI: https://nickgrossman.xyz
  * Version: 0.3
  */
 
