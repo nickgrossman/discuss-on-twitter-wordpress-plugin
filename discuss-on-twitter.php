@@ -7,7 +7,7 @@
  * Version: 0.3
  */
 
-/* 
+/*
 *
 * The button itself
 *
@@ -26,10 +26,10 @@ function discuss_on_twitter_button() {
 
 <div class="discuss-on-twitter">
   <?php if($author_handle): ?>
-    
+
   <?php if ($tweet_id) : ?>
     <a class="discuss-on-twitter-button reply-on-twitter" href="https://twitter.com/intent/tweet?in_reply_to=<?php echo $tweet_id; ?>">
-      <span class="dashicons dashicons-twitter"></span> 
+      <span class="dashicons dashicons-twitter"></span>
       Discuss on Twitter
     </a>
      <a class="discuss-on-twitter-button view-reactions" href="https://twitter.com/<?php echo $author_handle; ?>/status/<?php echo urlencode($tweet_id); ?>" target="_twitter-<?php echo $id; ?>">
@@ -37,44 +37,44 @@ function discuss_on_twitter_button() {
     </a>
     <?php else : ?>
       <a class="discuss-on-twitter-button reply-on-twitter" href="https://twitter.com/intent/tweet?url=<?php echo $permalink; ?>&text=@<?php echo $author_handle; ?>">
-      <span class="dashicons dashicons-twitter"></span> 
+      <span class="dashicons dashicons-twitter"></span>
       Discuss on Twitter
     </a>
-    <a class="discuss-on-twitter-button view-reactions" href="https://twitter.com/search?q=<?php echo urlencode($permalink); ?>" target="_twitter-<?php echo $id; ?>">
+    <a class="discuss-on-twitter-button view-reactions" href="https://twitter.com/search?q=<?php echo urlencode($permalink); ?>&f=live" target="_twitter-<?php echo $id; ?>">
       View Discussion
     </a>
   <?php endif; ?>
 
   <?php else: ?>
-    <a class="discuss-on-twitter-button view-and-reply" href="https://twitter.com/search?q=<?php echo urlencode($permalink); ?>" target="_twitter-<?php echo $id; ?>">
+    <a class="discuss-on-twitter-button view-and-reply" href="https://twitter.com/search?q=<?php echo urlencode($permalink); ?>&f=live" target="_twitter-<?php echo $id; ?>">
       View Discussions on Twitter
     </a>
   <?php endif; ?>
- </div>  
+ </div>
 
 
 
 <?php
 }
 
-/* 
+/*
 *
 * Add link to settings page from plugins page
 *
 */
-add_filter( 'plugin_row_meta', 'dot_plugin_row_meta', 10, 2 ); 
-function dot_plugin_row_meta( $links, $file ) {    
+add_filter( 'plugin_row_meta', 'dot_plugin_row_meta', 10, 2 );
+function dot_plugin_row_meta( $links, $file ) {
     if ( plugin_basename( __FILE__ ) == $file ) {
         $row_meta = array(
           'docs'    => '<a href="' . esc_url( '/wp-admin/options-general.php?page=discuss-on-twitter' ) . '" aria-label="' . esc_attr__( 'Docs and Instructions', 'domain' ) . '">' . esc_html__( 'View details', 'domain' ) . '</a>'
         );
- 
+
         return array_merge( $links, $row_meta );
     }
     return (array) $links;
 }
 
-/* 
+/*
 *
 * Settings page for this plugin
 *
@@ -119,7 +119,7 @@ function dot_options_page()
   <?php if (!$wpt_active): ?>
     <a class="button" href="/wp-admin/plugin-install.php?s=WP+to+Twitter&tab=search&type=term" target="_blank">Install WP to Twitter to continue with advanced installation</a>
   <?php endif; ?>
-  
+
   <?php if($wpt_active):?>
 
     <p><span style="background: yellow">WP to Twitter is Active.  Sweet!</span></p>
@@ -146,7 +146,7 @@ function dot_options_page()
 }
 
 
-/* 
+/*
 *
 * Save Tweet ID to DB
 *
